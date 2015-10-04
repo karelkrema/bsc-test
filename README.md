@@ -47,12 +47,14 @@ Kdybych měl program rozvíjet dál, určitě bych prozkoumal a využil spring t
 
 Takhle jsem testoval jednotlivé části, coverage je 61%.
 
+Každopádně jsem se snažil aplikaci psát tak, aby psaní testů bylo co nejsnadnější.
+
 ## Použité knihovny
 Typické: Spring, JUnit, Guava.
 
 Méně typické (aspoň pro mě, zkoušel jsem ji prvně): Project lombok pro eliminaci boilerplate kódu (https://projectlombok.org/features/index.html)
 
-Viz. třída CurrencyTransaction, což je v podstaě immutabilní DTO objekt s gettery, setery a toString(). S lombokem vypadá takto:
+Viz. třída CurrencyTransaction, což je v podstaě immutabilní DTO objekt s gettery a toString(). S lombokem vypadá takto:
 ```java
 @Getter
 @AllArgsConstructor
@@ -115,10 +117,12 @@ If no matching command is found, "FallbackCommand" is executed (it prints out a 
 
 You stated that one of the candidates had this exercise done in two hours, one class and 300 lines. I was definitely not that quick. The amount of lines is probably something similar, but the classel... I definitely have a little bit more of them :-)
 
-## Test
+## Tests
 If further development was necessary, I would definitely explore and use the spring test library and write down some end to end integration tests.
 
 So far, I have tested particular units, the coverage is 61%.
+
+The thing is I tried to write the app in a way that covering it with tests should be easy.
 
 ## Libraries used
 Typical ones: Spring, JUnit, Guava.
