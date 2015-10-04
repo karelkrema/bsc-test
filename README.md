@@ -20,6 +20,10 @@ Run pak samozřejmě tento soubor spouští a předává mu jeden parametr z př
 
 Buildandrun je pak kombinací obojího, takže spuštění <code>buildandrun.sh transactions.txt</code> hned po vyklonování by mělo fungovat - tj. zkompilovat program a spustit ho s předpřipraveným souborem.
 
+## Funkce programu
+Program je tolerantní, neznámý, nebo prázdný příkaz vypíše nápovědu.
+Přijímá jeden argument - název souboru se sadou příkazů. Pokud soubor neexistuje, je argument ignorován.
+
 ## Kód
 
 Celá aplikace se skládá z několika komponent (ty jsou členěny po balíčcích) - a ve výsledku je z toho poměrně dost přeinženýrované řešení.
@@ -39,17 +43,17 @@ O toto se stará komponenta *CommandMatcher*.
 Říkali jste, že jeden z kandidátů to měl napsané za dvě hodiny v jedné třídě na 300 řádek. Já zdaleka tak rychlý nebyl. Řádek bude cca stejně - ale těch tříd mám trochu víc :-)
 
 ## Testy
-Kdybych měl program rozvíjet dál, určitě bych prozkoumal a využil spring test knihovnu a napsal nějaké end to end integrační.
+Kdybych měl program rozvíjet dál, určitě bych prozkoumal a využil spring test knihovnu a napsal nějaké end to end integrační testy.
 
 Takhle jsem testoval jednotlivé části, coverage je 61%.
 
 ## Použité knihovny
 Typické: Spring, JUnit, Guava.
 
-Méně typické (aspoň pro mě, zkoušel jsem ji prvně): Project lombok pro eliminaci boilerplate kódu.
+Méně typické (aspoň pro mě, zkoušel jsem ji prvně): Project lombok pro eliminaci boilerplate kódu (https://projectlombok.org/features/index.html)
 
 Viz. třída CurrencyTransaction, což je v podstaě immutabilní DTO objekt s gettery, setery a toString(). S lombokem vypadá takto:
-<code>
+```java
 @Getter
 @AllArgsConstructor
 @ToString
@@ -57,8 +61,13 @@ public class CurrencyTransaction {
     private final @NonNull Currency currency;
     private final @NonNull BigDecimal amount;
 }
-</code>
+```
 
+## TODOs
+Je zajímavé, že i na takovémto jednoduchém zadání se toho dá hodně ladit.
+Několik TODOs mi zbylo, například při neexistujícím vstupním souboru by se měla místo ignorace vypsat hláška.
+
+Také chybí např. logování a bonusová část, která by ale v praxi byla poměrně jednoduchá - jedna komponenta s kurzy měn k dolaru a jeden command.
 
 
 
