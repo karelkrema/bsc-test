@@ -3,8 +3,6 @@ package cz.elk.bsctest.commands.impl;
 import java.math.BigDecimal;
 import java.util.Map;
 
-import lombok.NonNull;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -39,7 +37,7 @@ public class DumpCommand implements Command {
     }
 
     @Override
-    public CommandResult execute(@NonNull final String input) {
+    public CommandResult execute(final String input) {
         final Map<Currency, BigDecimal> balancesSnapshot = balancesPerCurrency.createBalancesSnapshot();
         final String dump = balancesDumpAssembler.assembleDump(balancesSnapshot);
         writer.write(dump);
