@@ -6,12 +6,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import cz.elk.bsctest.Currency;
 import cz.elk.bsctest.balances.BalancesPerCurrency;
 import cz.elk.bsctest.commands.Command;
 import cz.elk.bsctest.commands.CommandResult;
 import cz.elk.bsctest.dump.BalancesDumpAssembler;
 import cz.elk.bsctest.io.Writer;
+import cz.elk.bsctest.model.Currency;
 
 /**
  * Dumps current balances per currency.

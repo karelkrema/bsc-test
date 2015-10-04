@@ -3,7 +3,7 @@ package cz.elk.bsctest.dump;
 import java.math.BigDecimal;
 import java.util.Map;
 
-import cz.elk.bsctest.Currency;
+import cz.elk.bsctest.model.Currency;
 
 /**
  * A simple class responsible for assembling a balance dump.

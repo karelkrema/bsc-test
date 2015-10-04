@@ -10,8 +10,8 @@ import lombok.NonNull;
 
 import org.springframework.stereotype.Component;
 
-import cz.elk.bsctest.Currency;
-import cz.elk.bsctest.CurrencyTransaction;
+import cz.elk.bsctest.model.Currency;
+import cz.elk.bsctest.model.CurrencyTransaction;
 
 @Component
 public class BalancesPerCurrencyImpl implements BalancesPerCurrency {

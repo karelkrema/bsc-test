@@ -3,8 +3,8 @@ package cz.elk.bsctest.balances;
 import java.math.BigDecimal;
 import java.util.Map;
 
-import cz.elk.bsctest.Currency;
-import cz.elk.bsctest.CurrencyTransaction;
+import cz.elk.bsctest.model.Currency;
+import cz.elk.bsctest.model.CurrencyTransaction;
 
 /**
  * Keeps track of balances per currency.<br/>

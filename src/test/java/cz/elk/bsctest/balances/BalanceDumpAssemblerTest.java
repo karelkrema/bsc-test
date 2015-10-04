@@ -7,9 +7,9 @@ import java.util.TreeMap;
 import org.junit.Assert;
 import org.junit.Test;
 
-import cz.elk.bsctest.Currency;
 import cz.elk.bsctest.dump.BalancesDumpAssembler;
 import cz.elk.bsctest.dump.BalancesDumpAssemblerImpl;
+import cz.elk.bsctest.model.Currency;
 
 public class BalanceDumpAssemblerTest {
 

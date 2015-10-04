@@ -8,8 +8,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import cz.elk.bsctest.Currency;
-import cz.elk.bsctest.CurrencyTransaction;
+import cz.elk.bsctest.model.Currency;
+import cz.elk.bsctest.model.CurrencyTransaction;
 
 public class BalancesImplTest {
 

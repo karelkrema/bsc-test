@@ -1,4 +1,4 @@
-package cz.elk.bsctest.parser;
+package cz.elk.bsctest.parsing;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import lombok.NonNull;
 
 import org.springframework.stereotype.Component;
 
-import cz.elk.bsctest.Currency;
-import cz.elk.bsctest.CurrencyTransaction;
+import cz.elk.bsctest.model.Currency;
+import cz.elk.bsctest.model.CurrencyTransaction;
 
 @Component
 public class CurrencyTransactionParserImpl implements CurrencyTransactionParser {

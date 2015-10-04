@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import cz.elk.bsctest.Currency;
+import cz.elk.bsctest.model.Currency;
 
 @Component
 public class BalancesDumpAssemblerImpl implements BalancesDumpAssembler {

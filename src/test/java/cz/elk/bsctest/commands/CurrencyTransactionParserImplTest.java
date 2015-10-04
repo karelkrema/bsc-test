@@ -7,10 +7,10 @@ import java.util.stream.Stream;
 import org.junit.Assert;
 import org.junit.Test;
 
-import cz.elk.bsctest.Currency;
-import cz.elk.bsctest.CurrencyTransaction;
-import cz.elk.bsctest.parser.CurrencyTransactionParser;
-import cz.elk.bsctest.parser.CurrencyTransactionParserImpl;
+import cz.elk.bsctest.model.Currency;
+import cz.elk.bsctest.model.CurrencyTransaction;
+import cz.elk.bsctest.parsing.CurrencyTransactionParser;
+import cz.elk.bsctest.parsing.CurrencyTransactionParserImpl;
 
 public class CurrencyTransactionParserImplTest {
     

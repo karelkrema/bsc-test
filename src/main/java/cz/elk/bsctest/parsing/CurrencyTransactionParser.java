@@ -1,8 +1,8 @@
-package cz.elk.bsctest.parser;
+package cz.elk.bsctest.parsing;
 
 import java.util.Optional;
 
-import cz.elk.bsctest.CurrencyTransaction;
+import cz.elk.bsctest.model.CurrencyTransaction;
 
 /**
  * A class responsible for parsing CurrencyTransaction

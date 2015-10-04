@@ -1,4 +1,4 @@
-package cz.elk.bsctest;
+package cz.elk.bsctest.model;
 
 import java.util.Optional;
 import java.util.stream.Stream;

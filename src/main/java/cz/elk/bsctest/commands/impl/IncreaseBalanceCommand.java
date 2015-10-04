@@ -5,11 +5,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import cz.elk.bsctest.CurrencyTransaction;
 import cz.elk.bsctest.balances.BalancesPerCurrency;
 import cz.elk.bsctest.commands.Command;
 import cz.elk.bsctest.commands.CommandResult;
-import cz.elk.bsctest.parser.CurrencyTransactionParser;
+import cz.elk.bsctest.model.CurrencyTransaction;
+import cz.elk.bsctest.parsing.CurrencyTransactionParser;
 
 @Component("increaseBalanceCommand")
 public class IncreaseBalanceCommand implements Command {

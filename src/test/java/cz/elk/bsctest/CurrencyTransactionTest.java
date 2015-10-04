@@ -6,6 +6,9 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
+import cz.elk.bsctest.model.Currency;
+import cz.elk.bsctest.model.CurrencyTransaction;
+
 public class CurrencyTransactionTest {
 
     @Test
