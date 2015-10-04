@@ -1,5 +1,6 @@
 package cz.elk.bsctest.commands.impl;
 
+import java.text.MessageFormat;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class IncreaseBalanceCommand implements Command {
         
         balancesPerCurrency.increaseBalance(tx);
         
-        return CommandResult.OK_CONTINUE;
+        return new CommandResult(MessageFormat.format("Balance increased by {0} for currency {1}", tx.getAmount(), tx.getCurrency()), false);
     }
     
 }

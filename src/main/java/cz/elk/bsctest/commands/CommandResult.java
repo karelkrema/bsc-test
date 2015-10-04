@@ -15,7 +15,6 @@ public class CommandResult {
 
     public static final CommandResult SILENT_CONTINUE = new CommandResult("", false);
     public static final CommandResult SILENT_TERMINATE = new CommandResult("", true);
-    public static final CommandResult OK_CONTINUE = new CommandResult("OK!", false);
 
     final String outputMessage;
     final boolean terminateProgram;

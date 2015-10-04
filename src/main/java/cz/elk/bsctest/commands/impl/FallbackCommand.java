@@ -2,8 +2,11 @@ package cz.elk.bsctest.commands.impl;
 
 import org.springframework.stereotype.Component;
 
+import com.google.common.base.Joiner;
+
 import cz.elk.bsctest.commands.Command;
 import cz.elk.bsctest.commands.CommandResult;
+import cz.elk.bsctest.model.Currency;
 
 
 /**
@@ -29,7 +32,10 @@ public class FallbackCommand implements Command {
                + "List of commands: \n"
                + "  'dump' dumps the balances immediately\n"
                + "  'exit' exits the program\n"
-               + "  '{CUR} {AMOUNT}' increases balance of currency {CUR} by amount {AMOUNT}";
+               + "  '{CUR} {AMOUNT}' increases balance of currency {CUR} by amount {AMOUNT}\n"
+               + "      where {CUR} is one of " + Joiner.on(", ").join(Currency.values()) + "\n"
+               + "      and  {AMOUNT} is for example 123.45" ;
     }
+
 
 }
