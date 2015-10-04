@@ -12,7 +12,7 @@ Pro snadný build a spouštění v unixovém prostředí je možné spustit
 
 <code>chmod u+x *.sh</code>
 
-Pak jsou k dispozici příkazy build.sh, run.sh a buildandrun.sh.
+Pak jsou k dispozici příkazy <code>build.sh</code>, <code>run.sh</code> a <code>buildandrun.sh</code>.
 
 Build volá <code>mvn clean compile assembly:single</code>, což v /target vytvoří jar se všemi dependencemi a spouštěcí třídou v manifestu.
 
