@@ -70,6 +70,85 @@ Několik TODOs mi zbylo, například při neexistujícím vstupním souboru by s
 Také chybí např. logování a bonusová část, která by ale v praxi byla poměrně jednoduchá - jedna komponenta s kurzy měn k dolaru a jeden command.
 
 
+# bsc-test - English
+
+## Download and run
+
+In a desired directory, run followint command:
+
+<code>git clone https://github.com/karelkrema/bsc-test.git</code>
+
+<code>cd bsc-test</code>
+
+For an easy build&run on unix platform, you can run:
+
+<code>chmod u+x *.sh</code>
+
+This makes <code>build.sh</code>, <code>run.sh</code> a <code>buildandrun.sh</code> commands runnable.
+
+Build calls <code>mvn clean compile assembly:single</code>, which creates a jar file with all necessarry dependencies and a main class in manifest in /target directory.
+
+Run obviously runs this jar file and passes a single command line parameter to it (there is an example file ready to use).
+
+Buildandrun is a combination of both so running <code>buildandrun.sh transactions.txt</code> right after the cloning should work, ie. compile the program and run it with the sample file.
+
+## Application features
+The application is tolerant so unknown (or empty) command prints help on the screen.
+
+As mentioned above, it accepts one command line argument - a name of a file with predefined commands set. If the file does not exist, it is simply ignored.
+
+## The code
+
+A whole apllication is composed of several components (placed in several packages). As a result, the solution is a little bit overengineered.
+
+So the components are following:
+
+1. *BalancesPerCurrency* in "balances" package: A component holding actual balance for each currency. It enables to increase a balance of particular currency, or create a snapshot of the current state. These two actions should not interfere, which is achieved by a simple synchronization on the component instance.
+2. *Command* in "commands" and "commands.impl" packages. There are several implementations and the purpose is a bond betwen textual command and a particular action. In general, it would be better to keep these two thing separated, but for sake of simplicity, i decided to couple them. Each implementation is able to check whether a given string matches the command and, eventually, execute the action of the command.
+The way it works is that when a command is read, a component called "CommandMatcher" iterates over registerd commands and the one who matches is executed.
+If no matching command is found, "FallbackCommand" is executed (it prints out a help message).
+3. *BalancesDumpAssembler* in "dump" package is responsible for an assembly of the string with actual balances dump.
+4. *CurrencyTransactionReader* in "io" io package accepts an input streams, walks through it line by line and processes each line. The same package also contains *Writer* component, which is just a wrapped System.out.println(...).
+5. *CurrencyTransactionParser* in "parsing" package is responsible for parsing a transaction out of a strings, ie. "EUR 30".
+6. *ScheduledDump* in "scheduling" package dumps the balances periodically.
+7. Package "model" then contains *Currency* enum and *CurrencyTransaction* objects.
+
+You stated that one of the candidates had this exercise done in two hours, one class and 300 lines. I was definitely not that quick. The amount of lines is probably something similar, but the classel... I definitely have a little bit more of them :-)
+
+## Test
+If further development was necessary, I would definitely explore and use the spring test library and write down some end to end integration tests.
+
+So far, I have tested particular units, the coverage is 61%.
+
+## Libraries used
+Typical ones: Spring, JUnit, Guava.
+
+Less typical ones (at least for me, I have tried it for the first time): Project lombok for boilerplate code elimination (https://projectlombok.org/features/index.html).
+
+See. CurrencyTransaction class, which is in fact just an immutable dto with getters and toString(). With lombok, it looks like this:
+```java
+@Getter
+@AllArgsConstructor
+@ToString
+public class CurrencyTransaction {
+    private final @NonNull Currency currency;
+    private final @NonNull BigDecimal amount;
+}
+```
+
+## TODOs
+It's interesting that even such a simple exercise could be tuned forever.
+I still have (quite) a few TODOs to complete, e.g. nonexistent input file should at least print some error message out.
+
+Logging is missing as well, plus the bonus part (balances in USD - this would in fact be pretty simple to implement - one component to maintain the rates and one command).
+
+
+
+
+
+
+
+
 
 
 
