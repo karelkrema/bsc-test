@@ -47,7 +47,7 @@ Kdybych měl program rozvíjet dál, určitě bych prozkoumal a využil spring t
 
 Takhle jsem testoval jednotlivé části, coverage je 61%.
 
-Každopádně jsem se snažil aplikaci psát tak, aby psaní testů bylo co nejsnadnější.
+Každopádně jsem se snažil aplikaci psát tak, aby psaní (za použití mocků) testů bylo co nejsnadnější.
 
 ## Použité knihovny
 Typické: Spring, JUnit, Guava.
@@ -122,7 +122,7 @@ If further development was necessary, I would definitely explore and use the spr
 
 So far, I have tested particular units, the coverage is 61%.
 
-The thing is I tried to write the app in a way that covering it with tests should be easy.
+The thing is I tried to write the app in a way that covering it with tests (and mocking) should be easy.
 
 ## Libraries used
 Typical ones: Spring, JUnit, Guava.
