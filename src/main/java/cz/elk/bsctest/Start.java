@@ -15,6 +15,7 @@ public class Start {
 		final AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext("cz.elk.bsctest");
 		final CurrencyTransactionReader txReader = ctx.getBean(CurrencyTransactionReader.class);
 
+		System.out.println("Git rulezz");
 		// Process input file, if parameter was given
 		if(args.length > 0) {
 		    final File file = new File(args[0]);
