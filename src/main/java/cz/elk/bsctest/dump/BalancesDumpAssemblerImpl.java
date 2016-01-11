@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.text.MessageFormat;
 import java.util.Map;
 
+import cz.elk.bsctest.Version;
 import org.springframework.stereotype.Component;
 
 import cz.elk.bsctest.model.Currency;
@@ -39,7 +40,7 @@ public class BalancesDumpAssemblerImpl implements BalancesDumpAssembler {
     }
 
     private static void appendHeader(final StringBuilder sb) {
-        sb.append(HEADER).append("\n");
+        sb.append(HEADER).append(Version.V001.name()).append("\n");
     }
 
     private static void appendLine(final StringBuilder sb,
