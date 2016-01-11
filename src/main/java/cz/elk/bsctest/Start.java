@@ -8,6 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import cz.elk.bsctest.io.CurrencyTransactionReader;
 
+/** Yes, I made it into BSC */
 public class Start {
 
 	public static void main(final String[] args) throws FileNotFoundException {
