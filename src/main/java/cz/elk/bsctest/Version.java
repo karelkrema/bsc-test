@@ -5,5 +5,6 @@ package cz.elk.bsctest;
  */
 public enum Version {
     V001,
-    V002
+    V002,
+    V003
 }
